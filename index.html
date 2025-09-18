@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>24N Sports Academy | Premium Sports Coaching in Bahrain</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="24N Sports Academy offers premium sports coaching for children in Bahrain, Saudi Arabia, UAE, and the UK. Join our football, swimming, basketball, and netball programs.">
+    <meta name="keywords" content="sports academy, kids sports, football coaching, swimming lessons, basketball training, netball bahrain, youth sports, 24N Sports">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.24nsportsacademy.com/"> <!-- Placeholder URL -->
+    <meta property="og:title" content="24N Sports Academy | Premium Sports Coaching">
+    <meta property="og:description" content="Join 24N Sports Academy for expert coaching in football, swimming, and more. Fostering talent in a positive, ambitious, and brave environment.">
+    <meta property="og:image" content="https://i.imghippo.com/files/RIe6408cc.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.24nsportsacademy.com/"> <!-- Placeholder URL -->
+    <meta property="twitter:title" content="24N Sports Academy | Premium Sports Coaching">
+    <meta property="twitter:description" content="Join 24N Sports Academy for expert coaching in football, swimming, and more. Fostering talent in a positive, ambitious, and brave environment.">
+    <meta property="twitter:image" content="https://i.imghippo.com/files/RIe6408cc.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="https://i.imghippo.com/files/RIe6408cc.png" type="image/png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --amber-400: #fbbf24;
+            --black: #000000;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            background-color: var(--black);
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            cursor: auto; /* Use default cursor */
+        }
+        .font-bebas {
+            font-family: 'Bebas Neue', sans-serif;
+        }
+        .header-bg-scroll {
+            background-color: var(--black);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+        .btn-gradient {
+            background-image: linear-gradient(to right, #f59e0b, #fbbf24);
+        }
+        
+        /* Section Dividers */
+        .section-divider {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            transform: rotate(180deg);
+        }
+        .section-divider svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 150px;
+        }
+        .section-divider .shape-fill {
+            fill: var(--black);
+        }
+
+        /* Scroll Animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .animate-on-scroll.fade-in { transform: translateY(20px); }
+        .animate-on-scroll.fade-in-up { transform: translateY(40px); }
+        .animate-on-scroll.fade-in-left { transform: translateX(-40px); }
+        .animate-on-scroll.fade-in-right { transform: translateX(40px); }
+        
+        .animate-on-scroll.is-visible {
+            opacity: 1;
+            transform: translate(0, 0);
+        }
+
+        /* Program Card Icons */
+        .program-icon {
+            color: var(--amber-400); /* Use color for currentColor */
+            stroke: currentColor; /* Default for line icons */
+            transition: all 0.3s ease;
+        }
+        .program-card:hover .program-icon {
+            stroke-width: 2.5;
+            filter: drop-shadow(0 0 10px var(--amber-400));
+        }
+
+        /* Instagram Icon Hover */
+        .instagram-icon svg {
+            transition: transform 0.3s ease;
+        }
+        .instagram-icon:hover svg {
+            fill: url(#instagram-gradient);
+            transform: scale(1.15);
+        }
+
+        /* Scroll Down Arrow */
+        .scroll-down {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-20px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+        }
+
+        /* Attributions Page */
+        #attributions-page {
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        #attributions-page.visible {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <main id="main-content">
+        <!-- Header -->
+        <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+            <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+                <a href="#" id="header-logo-link" class="flex items-center space-x-3">
+                    <img src="https://i.imghippo.com/files/RIe6408cc.png" alt="24N Sports Academy Logo" id="logo" class="h-16 opacity-0 transition-opacity duration-500">
+                </a>
+                <nav id="main-nav" class="hidden md:flex items-center space-x-8 transition-opacity duration-500">
+                    <a href="#about" class="hover:text-amber-400 transition-colors duration-300">About</a>
+                    <a href="#founder" class="hover:text-amber-400 transition-colors duration-300">Founder</a>
+                    <a href="#programs" class="hover:text-amber-400 transition-colors duration-300">Programs</a>
+                    <a href="#locations" class="hover:text-amber-400 transition-colors duration-300">Locations</a>
+                    <a href="#contact" class="btn-gradient text-black font-bold py-2 px-6 rounded-full hover:shadow-lg hover:shadow-amber-500/50 transform hover:scale-105 transition-all duration-300">Enroll Now</a>
+                </nav>
+                <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none transition-opacity duration-500">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </header>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-black z-40">
+            <div class="flex flex-col items-center justify-center h-full space-y-8">
+                <a href="#about" class="text-2xl hover:text-amber-400 transition-colors duration-300">About</a>
+                <a href="#founder" class="text-2xl hover:text-amber-400 transition-colors duration-300">Founder</a>
+                <a href="#programs" class="text-2xl hover:text-amber-400 transition-colors duration-300">Programs</a>
+                <a href="#locations" class="text-2xl hover:text-amber-400 transition-colors duration-300">Locations</a>
+                <a href="#contact" class="mt-4 btn-gradient text-black font-bold py-3 px-8 rounded-full text-xl">Enroll Now</a>
+            </div>
+        </div>
+        
+        <!-- Hero Section -->
+        <section class="relative h-screen flex items-center justify-center text-center overflow-hidden">
+            <video autoplay loop muted playsinline class="absolute z-0 w-auto min-w-full min-h-full max-w-none object-cover">
+                <source src="https://cdn.coverr.co/videos/coverr-a-football-player-dribbling-a-ball-on-a-field-793/1080p.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="absolute inset-0 bg-black opacity-60 z-10"></div>
+            <div class="relative z-20 flex flex-col items-center px-4 animate-on-scroll fade-in">
+                <img src="https://i.imghippo.com/files/RIe6408cc.png" 
+                     alt="24N Sports Academy Central Logo" 
+                     class="w-11/12 md:w-2/3 max-w-lg mb-8">
+                <h2 class="font-bebas text-2xl md:text-4xl text-white tracking-widest">
+                    <span>POSITIVE</span>
+                    <span class="text-amber-400 mx-2">|</span>
+                    <span>AMBITIOUS</span>
+                    <span class="text-amber-400 mx-2">|</span>
+                    <span>BRAVE</span>
+                </h2>
+            </div>
+            <div class="scroll-down z-20">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="py-24 md:py-40 relative">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-1 gap-16 items-center">
+                    <div class="animate-on-scroll fade-in-right text-center">
+                        <h2 class="font-bebas text-5xl md:text-7xl text-amber-400 tracking-wider mb-6">About 24N Sports</h2>
+                        <h3 class="text-3xl font-bold mb-4">Positive | Ambitious | Brave</h3>
+                        <p class="text-lg text-gray-300 leading-relaxed mb-6 max-w-3xl mx-auto">
+                            Welcome to 24N Sports Academy, a premier sports coaching provider for children. Our mission is to deliver high-quality sports education in a fun, safe, and positive environment. We believe in nurturing talent, building confidence, and fostering a lifelong love for sports.
+                        </p>
+                        <p class="text-lg text-gray-300 leading-relaxed max-w-3xl mx-auto">
+                            We focus on developing not just athletic skills but also key life values like teamwork, discipline, and resilience. Join our community and be a part of a team that is passionate, dedicated, and always striving for excellence.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="section-divider">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" class="shape-fill"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Founder Section -->
+        <section id="founder" class="py-24 md:py-40 bg-black">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-2 gap-16 items-center">
+                    <div class="flex justify-center animate-on-scroll fade-in-right">
+                        <div class="relative w-80 h-80">
+                             <div class="absolute inset-0 rounded-full border-4 border-amber-400 transform scale-105 animate-pulse"></div>
+                            <img src="https://i.ibb.co/spwRx2TJ/1698063220255-removebg-preview.png" alt="Founder and Managing Director of 24N Sports Academy" class="rounded-full object-cover w-full h-full shadow-2xl relative z-10">
+                        </div>
+                    </div>
+                    <div class="text-center md:text-left animate-on-scroll fade-in-left">
+                        <h2 class="font-bebas text-5xl md:text-7xl text-amber-400 tracking-wider mb-4">Meet The Founder</h2>
+                        <p class="text-3xl font-bold text-white mb-6">Managing Director & Founder</p>
+                        <p class="text-xl italic text-gray-400 border-l-4 border-amber-400 pl-6">"Our goal is to build not just great athletes, but exceptional individuals. Every child has the potential for greatness, and our mission is to help them discover it."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Programs Section -->
+        <section id="programs" class="py-24 md:py-40 relative">
+            <div class="section-divider" style="transform: rotate(0); top: -1px; bottom: auto;">
+                   <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                     <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" class="shape-fill"></path>
+                </svg>
+            </div>
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="font-bebas text-5xl md:text-7xl text-amber-400 tracking-wider mb-16 animate-on-scroll fade-in-up">Our Programs</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Program Card 1: Football -->
+                    <div class="program-card bg-black p-8 rounded-lg shadow-lg transition-all duration-300 animate-on-scroll fade-in-up" style="transition-delay: 100ms;">
+                        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="program-icon h-16 w-16 mx-auto mb-6" viewBox="0 0 194 194">
+                             <circle fill="#fbbf24" cx="97" cy="97" r="97" />
+                            <path fill="#000000" d="m 94,9.2 a 88,88 0 0 0 -55,21.8 l 27,0 28,-14.4 0,-7.4 z m 6,0 0,7.4 28,14.4 27,0 a 88,88 0 0 0 -55,-21.8 z m -67.2,27.8 a 88,88 0 0 0 -20,34.2 l 16,27.6 23,-3.6 21,-36.2 -8.4,-22 -31.6,0 z m 96.8,0 -8.4,22 21,36.2 23,3.6 15.8,-27.4 a 88,88 0 0 0 -19.8,-34.4 l -31.6,0 z m -50,26 -20.2,35.2 17.8,30.8 39.6,0 17.8,-30.8 -20.2,-35.2 -34.8,0 z m -68.8,16.6 a 88,88 0 0 0 -1.8,17.4 88,88 0 0 0 10.4,41.4 l 7.4,-4.4 -1.4,-29 -14.6,-25.4 z m 172.4,0.2 -14.6,25.2 -1.4,29 7.4,4.4 a 88,88 0 0 0 10.4,-41.4 88,88 0 0 0 -1.8,-17.2 z m -106,57.2 -15.4,19 L 77.2,182.6 a 88,88 0 0 0 19.8,2.4 88,88 0 0 0 19.8,-2.4 l 15.4,-26.6 -15.4,-19 -39.6,0 z m -47.8,2.6 -7,4 A 88,88 0 0 0 68.8,180.4 l -14,-24.6 -25.4,-16.2 z m 135.2,0 -25.4,16.2 -14,24.4 a 88,88 0 0 0 46.4,-36.6 l -7,-4 z"/>
+                        </svg>
+                        <h3 class="font-bebas text-3xl mb-4">Football Academy</h3>
+                        <p class="text-gray-400">Master the beautiful game. Our football program focuses on technical skills, tactical awareness, and teamwork.</p>
+                    </div>
+                    <!-- Program Card 2: Swimming -->
+                    <div class="program-card bg-black p-8 rounded-lg shadow-lg transition-all duration-300 animate-on-scroll fade-in-up" style="transition-delay: 200ms;">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="program-icon h-16 w-16 mx-auto mb-6" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"></path><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"></path><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"></path></svg>
+                        <h3 class="font-bebas text-3xl mb-4">Swimming</h3>
+                        <p class="text-gray-400">From beginners to competitive swimmers, our classes build water confidence, stroke technique, and endurance.</p>
+                    </div>
+                    <!-- Program Card 3: Basketball -->
+                    <div class="program-card bg-black p-8 rounded-lg shadow-lg transition-all duration-300 animate-on-scroll fade-in-up" style="transition-delay: 300ms;">
+                        <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" class="program-icon h-16 w-16 mx-auto mb-6" fill="currentColor" stroke="none">
+                            <path d="M248.37 41.094c-49.643 1.754-98.788 20.64-137.89 56.656L210.53 197.8c31.283-35.635 45.59-88.686 37.84-156.706zm18.126.107c7.646 71.205-7.793 129.56-43.223 169.345L256 243.27 401.52 97.75c-38.35-35.324-86.358-54.18-135.024-56.55zM97.75 110.48c-36.017 39.102-54.902 88.247-56.656 137.89 68.02 7.75 121.07-6.557 156.707-37.84L97.75 110.48zm316.5 0L268.73 256l32.71 32.71c33.815-30.112 81.05-45.78 138.183-45.11 10.088.118 20.49.753 31.176 1.9-2.37-48.665-21.227-96.672-56.55-135.02zM210.545 223.272c-39.785 35.43-98.14 50.87-169.344 43.223 2.37 48.666 21.226 96.675 56.55 135.025L243.27 256l-32.725-32.727zm225.002 38.27c-51.25.042-92.143 14.29-121.348 39.928l100.05 100.05c36.017-39.102 54.902-88.247 56.656-137.89-12.275-1.4-24.074-2.096-35.36-2.087zM256 268.73L110.48 414.25c38.35 35.324 86.358 54.18 135.024 56.55-7.646-71.205 7.793-129.56 43.223-169.345L256 268.73zm45.47 45.47c-31.283 35.635-45.59 88.686-37.84 156.706 49.643-1.754 98.788-20.64 137.89-56.656L301.47 314.2z"/>
+                        </svg>
+                        <h3 class="font-bebas text-3xl mb-4">Basketball</h3>
+                        <p class="text-gray-400">Develop your dribbling, shooting, and defensive skills. Our coaching emphasizes game intelligence and athleticism.</p>
+                    </div>
+                    <!-- Program Card 4: Netball -->
+                    <div class="program-card bg-black p-8 rounded-lg shadow-lg transition-all duration-300 animate-on-scroll fade-in-up" style="transition-delay: 400ms;">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="program-icon h-16 w-16 mx-auto mb-6" stroke="none">
+                             <!-- The main yellow ball -->
+                            <path fill="#fbbf24" d="M21.716,21.716c-15.596,15.596-15.596,40.973,0,56.568 c7.798,7.798,18.041,11.697,28.284,11.697s20.486-3.899,28.284-11.697c15.596-15.596,15.596-40.973,0-56.568 C62.688,6.12,37.312,6.12,21.716,21.716z"/>
+                            <!-- The black sections ("corners") -->
+                            <path fill="#000000" d="M24.525,21.804c3.954-3.576,8.486-6.166,13.277-7.782 c-3.039,23.348,8.52,34.274,11.122,36.406c-0.366,2.063-2.236,9.877-10.247,17.325 C35.612,65.37,20.047,51.636,24.525,21.804z"/>
+                            <path fill="#000000" d="M23.13,76.87c-14.498-14.498-14.799-37.889-0.922-52.769 c-3.27,28.191,11.105,41.883,14.954,44.999c-3.475,2.924-7.968,5.728-13.75,8.038 C23.319,77.047,23.222,76.962,23.13,76.87z"/>
+                            <path fill="#000000" d="M25.031,78.633c21.719-9.047,25.346-24.58,25.88-27.915 c1.97-0.712,9.657-2.984,20.117,0.276c-0.555,3.989-4.716,24.15-32.688,35.158 C33.553,84.616,29.014,82.11,25.031,78.633z"/>
+                            <path fill="#000000" d="M76.87,76.87c-9.585,9.585-23.057,12.96-35.388,10.144 c25.911-11.211,30.658-30.368,31.466-35.372c4.259,1.562,8.924,4.06,13.812,7.921 C85.12,65.908,81.83,71.911,76.87,76.87z"/>
+                            <path fill="#000000" d="M87.253,57.421c-18.721-14.359-33.938-9.77-37.088-8.569 c-1.603-1.353-7.4-6.872-9.807-17.565c3.758-1.522,23.28-7.966,46.771,10.729 C88.212,47.087,88.258,52.337,87.253,57.421z"/>
+                            <path fill="#000000" d="M39.96,29.302c-0.777-4.468-0.947-9.757-0.056-15.918 C43.204,12.48,46.601,12.018,50,12.018c9.731,0,19.462,3.704,26.87,11.112 c4.552,4.552,7.699,9.982,9.454,15.75C63.671,22.046,44.715,27.495,39.96,29.302z"/>
+                        </svg>
+                        <h3 class="font-bebas text-3xl mb-4">Netball</h3>
+                        <p class="text-gray-400">Join one of the fastest-growing sports. We focus on fast-paced drills, strategic play, and fostering team spirit.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Locations Section -->
+        <section id="locations" class="py-24 md:py-40 relative">
+            <div class="section-divider">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" class="shape-fill"></path>
+                </svg>
+            </div>
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="font-bebas text-5xl md:text-7xl text-amber-400 tracking-wider mb-16 animate-on-scroll fade-in-up">Find Us Across The Globe</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-12 animate-on-scroll fade-in-up" style="transition-delay: 100ms;">We are proud to operate in world-class facilities across multiple countries, bringing premium sports coaching to a global community.</p>
+                <div class="flex justify-center items-center space-x-8 md:space-x-16">
+                    <div class="text-center animate-on-scroll fade-in-up" style="transition-delay: 200ms;">
+                        <div class="w-24 h-24 rounded-full bg-gray-800 flex items-center justify-center mb-2 glow-bh transition-all duration-300 transform hover:scale-110"><img src="https://flagcdn.com/bh.svg" alt="Bahrain Flag" class="w-12"></div>
+                        <span class="font-semibold">Bahrain</span>
+                    </div>
+                      <div class="text-center animate-on-scroll fade-in-up" style="transition-delay: 300ms;">
+                        <div class="w-24 h-24 rounded-full bg-gray-800 flex items-center justify-center mb-2 glow-sa transition-all duration-300 transform hover:scale-110"><img src="https://flagcdn.com/sa.svg" alt="Saudi Arabia Flag" class="w-12"></div>
+                        <span class="font-semibold">Saudi Arabia</span>
+                    </div>
+                      <div class="text-center animate-on-scroll fade-in-up" style="transition-delay: 400ms;">
+                        <div class="w-24 h-24 rounded-full bg-gray-800 flex items-center justify-center mb-2 glow-ae transition-all duration-300 transform hover:scale-110"><img src="https://flagcdn.com/ae.svg" alt="UAE Flag" class="w-12"></div>
+                        <span class="font-semibold">UAE</span>
+                    </div>
+                      <div class="text-center animate-on-scroll fade-in-up" style="transition-delay: 500ms;">
+                        <div class="w-24 h-24 rounded-full bg-gray-800 flex items-center justify-center mb-2 glow-gb transition-all duration-300 transform hover:scale-110"><img src="https://flagcdn.com/gb.svg" alt="UK Flag" class="w-12"></div>
+                        <span class="font-semibold">United Kingdom</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partners Section -->
+        <section id="partners" class="py-20 relative">
+            <div class="section-divider" style="transform: rotate(0); top: -1px; bottom: auto;">
+                   <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                     <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" class="shape-fill"></path>
+                </svg>
+            </div>
+            <div class="container mx-auto px-6 text-center">
+                   <h2 class="font-bebas text-4xl text-gray-400 tracking-wider mb-6 animate-on-scroll fade-in-up">Proudly Partnered With</h2>
+                   <p class="text-xl text-amber-400 italic max-w-3xl mx-auto mb-16 animate-on-scroll fade-in-up" style="transition-delay: 100ms;">To empower athletic skills in youth and support young athletes.</p>
+                   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Partner Cards -->
+                    <a href="https://www.nadeenschool.com/" target="_blank" rel="noopener" class="partner-card bg-black rounded-lg p-6 flex items-center justify-center min-h-[10rem] relative group transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-amber-500/10 border border-gray-800 animate-on-scroll fade-in-up" style="transition-delay: 200ms;">
+                        <h3 class="font-bebas text-3xl text-gray-200 text-center tracking-wider">Nadeen School</h3>
+                        <div class="underline-glow"></div>
+                    </a>
+                    <a href="https://www.asb.bh/" target="_blank" rel="noopener" class="partner-card bg-black rounded-lg p-6 flex items-center justify-center min-h-[10rem] relative group transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-amber-500/10 border border-gray-800 animate-on-scroll fade-in-up" style="transition-delay: 300ms;">
+                        <h3 class="font-bebas text-3xl text-gray-200 text-center tracking-wider">American School of Bahrain</h3>
+                        <div class="underline-glow"></div>
+                    </a>
+                    <a href="https://www.st-chris.net/" target="_blank" rel="noopener" class="partner-card bg-black rounded-lg p-6 flex items-center justify-center min-h-[10rem] relative group transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-amber-500/10 border border-gray-800 animate-on-scroll fade-in-up" style="transition-delay: 400ms;">
+                        <h3 class="font-bebas text-3xl text-gray-200 text-center tracking-wider">St Christopher's School</h3>
+                        <div class="underline-glow"></div>
+                    </a>
+                    <a href="https://britishschoolbahrain.com/" target="_blank" rel="noopener" class="partner-card bg-black rounded-lg p-6 flex items-center justify-center min-h-[10rem] relative group transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-amber-500/10 border border-gray-800 animate-on-scroll fade-in-up" style="transition-delay: 500ms;">
+                          <h3 class="font-bebas text-3xl text-gray-200 text-center tracking-wider">British School of Bahrain</h3>
+                          <div class="underline-glow"></div>
+                    </a>
+                   </div>
+            </div>
+        </section>
+
+        <!-- Contact / CTA Section -->
+        <section id="contact" class="py-24 md:py-40 relative">
+            <div class="section-divider">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" class="shape-fill"></path>
+                </svg>
+            </div>
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="font-bebas text-5xl md:text-7xl text-amber-400 tracking-wider mb-6 animate-on-scroll fade-in-up">Join The Academy</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-12 animate-on-scroll fade-in-up" style="transition-delay: 100ms;">
+                    Ready to take the next step? Enroll in one of our programs today and start your journey to becoming a better athlete.
+                </p>
+                <a href="https://linktr.ee/24N_Bahrain" target="_blank" class="btn-gradient text-black font-bold py-4 px-10 rounded-full text-xl inline-block hover:shadow-lg hover:shadow-amber-500/50 transform hover:scale-105 transition-all duration-300 animate-on-scroll fade-in-up" style="transition-delay: 200ms;">
+                    Register Your Interest
+                </a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-black py-16 relative">
+            <div class="container mx-auto px-6 text-center md:text-left">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-8">
+                    <!-- Column 1: Logo & Brand -->
+                    <div class="flex flex-col items-center md:items-start">
+                        <img src="https://i.imghippo.com/files/RIe6408cc.png" alt="24N Sports Academy Logo" class="h-20 mb-4">
+                        <p class="text-gray-400 max-w-xs text-center md:text-left">
+                            Premium sports coaching to empower the next generation of athletes.
+                        </p>
+                    </div>
+                    <!-- Column 2: Quick Links -->
+                    <div>
+                        <h3 class="font-bebas text-2xl text-white tracking-wider mb-4">Quick Links</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#about" class="text-gray-400 hover:text-amber-400 transition-colors">About</a></li>
+                            <li><a href="#founder" class="text-gray-400 hover:text-amber-400 transition-colors">Founder</a></li>
+                            <li><a href="#programs" class="text-gray-400 hover:text-amber-400 transition-colors">Programs</a></li>
+                            <li><a href="#contact" class="text-gray-400 hover:text-amber-400 transition-colors">Contact</a></li>
+                        </ul>
+                    </div>
+                    <!-- Column 3: Socials -->
+                    <div>
+                        <h3 class="font-bebas text-2xl text-white tracking-wider mb-4">Follow Us</h3>
+                        <div class="flex justify-center md:justify-start">
+                              <a href="https://www.instagram.com/24nsportsacademy/?hl=en" target="_blank" class="instagram-icon text-gray-400">
+                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                     <defs>
+                                         <linearGradient id="instagram-gradient" x1="0%" y1="100%" x2="100%" y2="0%">
+                                             <stop offset="0%" style="stop-color:#fdf497;"></stop>
+                                             <stop offset="50%" style="stop-color:#fd5949;"></stop>
+                                             <stop offset="100%" style="stop-color:#d6249f;"></stop>
+                                         </linearGradient>
+                                     </defs>
+                                     <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.85-.07-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919 1.266-.057 1.644-.07 4.85-.07zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98C23.986 15.667 24 15.259 24 12s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98C15.667.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"></path>
+                                 </svg>
+                              </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-t border-gray-800 pt-8 mt-8">
+                    <div class="flex flex-col md:flex-row justify-between items-center text-sm">
+                        <!-- Added the collaboration line here -->
+                        <p class="text-gray-500 text-center md:text-left text-sm mb-2 md:mb-0">
+                            24N Academy in collaboration with <a href="https://www.lexverse.ai/" target="_blank" rel="noopener" class="hover:text-amber-400 underline">LEXVERSE</a>
+                        </p>
+                        <p class="text-gray-500 text-center md:text-right">&copy; <span id="year"></span> 24N Sports Academy. All Rights Reserved.</p>
+                        <a href="#" id="attributions-link" class="text-gray-500 hover:text-amber-400 transition-colors duration-300 underline mt-4 md:mt-0">Attributions</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+    
+    <!-- Attributions Page -->
+    <div id="attributions-page" class="hidden fixed inset-0 bg-black z-50 p-8 overflow-y-auto">
+        <div class="container mx-auto flex flex-col items-center justify-center min-h-full text-center">
+            <h1 class="font-bebas text-5xl md:text-7xl text-amber-400 tracking-wider mb-8">Attributions</h1>
+            <div class="max-w-xl text-lg text-gray-300 space-y-6">
+                <p>This website was designed and developed with the help of several creative assets. We are grateful to the artists and developers who have made their work available.</p>
+                <div class="border-t border-gray-700 pt-6">
+                    <h3 class="font-bebas text-3xl text-white mb-2">Icons</h3>
+                    <ul class="list-disc list-inside text-left space-y-2">
+                        <li>
+                            Basketball Icon by <a href="https://game-icons.net/" target="_blank" rel="noopener" class="underline hover:text-amber-400">game-icons.net</a>, licensed under <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noopener" class="underline hover:text-amber-400">CC BY 3.0</a>.
+                        </li>
+                        <li>
+                            Netball Icon by Made from <a href="https://thenounproject.com/browse/icons/term/netball/" target="_blank" rel="noopener" class="underline hover:text-amber-400">Noun Project</a>, licensed under <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noopener" class="underline hover:text-amber-400">CC BY 3.0</a>.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <button id="back-button" class="mt-12 btn-gradient text-black font-bold py-3 px-8 rounded-full text-xl hover:shadow-lg hover:shadow-amber-500/50 transform hover:scale-105 transition-all duration-300">
+                Back to Site
+            </button>
+        </div>
+    </div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // --- Elements ---
+            const mainContent = document.getElementById('main-content');
+            const attributionsPage = document.getElementById('attributions-page');
+            const attributionsLink = document.getElementById('attributions-link');
+            const backButton = document.getElementById('back-button');
+            const headerLogoLink = document.getElementById('header-logo-link');
+            let scrollPosition = 0;
+
+            // --- Functions to toggle attribution page ---
+            function showAttributions() {
+                scrollPosition = window.scrollY;
+                mainContent.style.display = 'none';
+                attributionsPage.classList.remove('hidden');
+                setTimeout(() => attributionsPage.classList.add('visible'), 10); // For fade-in
+                document.body.style.overflow = 'hidden';
+            }
+
+            function hideAttributions() {
+                attributionsPage.classList.remove('visible');
+                setTimeout(() => {
+                    attributionsPage.classList.add('hidden');
+                    mainContent.style.display = 'block';
+                    window.scrollTo(0, scrollPosition);
+                    document.body.style.overflow = 'auto';
+                }, 500); // Match CSS transition duration
+            }
+
+            // --- Event Listeners ---
+            if (attributionsLink) {
+                attributionsLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    showAttributions();
+                });
+            }
+
+            if (backButton) {
+                backButton.addEventListener('click', hideAttributions);
+            }
+
+            if (headerLogoLink) {
+                headerLogoLink.addEventListener('click', (e) => {
+                    if (!attributionsPage.classList.contains('hidden')) {
+                        e.preventDefault();
+                        hideAttributions();
+                    }
+                });
+            }
+
+            // Footer Year
+            document.getElementById('year').textContent = new Date().getFullYear();
+
+            // Header Scroll Effect
+            const header = document.getElementById('header');
+            const logo = document.getElementById('logo');
+            
+            if (header && logo) {
+                window.addEventListener('scroll', () => {
+                    const scrollThreshold = window.innerHeight * 0.9;
+                    if (window.scrollY > scrollThreshold) {
+                        header.classList.add('header-bg-scroll');
+                        logo.classList.remove('opacity-0');
+                    } else {
+                        header.classList.remove('header-bg-scroll');
+                        logo.classList.add('opacity-0');
+                    }
+                });
+            }
+
+            // Mobile Menu Toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+                mobileLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                    });
+                });
+            }
+
+            // Scroll Animations
+            const animatedElements = document.querySelectorAll('.animate-on-scroll');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            animatedElements.forEach(el => observer.observe(el));
+            
+        });
+    </script>
+
+</body>
+</html>
