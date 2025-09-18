@@ -43,6 +43,7 @@
             color: #ffffff;
             font-family: 'Inter', sans-serif;
             cursor: auto;
+            overflow-x: hidden; /* Prevent horizontal scrollbars */
         }
         .font-bebas {
             font-family: 'Bebas Neue', sans-serif;
@@ -297,7 +298,8 @@
             <div class="container mx-auto px-6 text-center">
                 <h2 class="font-bebas text-5xl md:text-7xl text-amber-400 tracking-wider mb-16 animate-on-scroll fade-in-up">Find Us Across The Globe</h2>
                 <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-12 animate-on-scroll fade-in-up" style="transition-delay: 100ms;">We are proud to operate in world-class facilities across multiple countries, bringing premium sports coaching to a global community.</p>
-                <div class="flex justify-center items-center space-x-8 md:space-x-16">
+                <!-- Optimized grid for mobile to prevent horizontal overflow -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
                     <div class="text-center animate-on-scroll fade-in-up" style="transition-delay: 200ms;">
                         <div class="w-24 h-24 rounded-full bg-gray-800 flex items-center justify-center mb-2 glow-bh transition-all duration-300 transform hover:scale-110"><img src="https://flagcdn.com/bh.svg" alt="Bahrain Flag" class="w-12"></div>
                         <span class="font-semibold">Bahrain</span>
