@@ -111,26 +111,6 @@
             transform: scale(1.15);
         }
 
-        /* Scroll Down Arrow */
-        .scroll-down {
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            animation: bounce 2s infinite;
-        }
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateX(-50%) translateY(0);
-            }
-            40% {
-                transform: translateX(-50%) translateY(-20px);
-            }
-            60% {
-                transform: translateX(-50%) translateY(-10px);
-            }
-        }
-
         /* Attributions Page */
         #attributions-page {
             opacity: 0;
@@ -176,20 +156,17 @@
         
         <!-- Hero Section -->
         <section class="relative h-screen flex items-center justify-center text-center overflow-hidden bg-black">
-            <div class="relative z-20 w-full max-w-lg px-4 flex flex-col items-center justify-center animate-on-scroll fade-in">
+            <div class="relative z-20 w-full max-w-5xl px-4 flex flex-col items-center justify-center animate-on-scroll fade-in">
                 <img src="https://i.imghippo.com/files/RIe6408cc.png" 
                      alt="24N Sports Academy Central Logo" 
                      class="w-11/12 md:w-full max-w-lg mb-8 mx-auto">
-                <h2 class="font-bebas text-2xl md:text-4xl text-white tracking-widest text-center">
-                    <span>POSITIVE</span>
-                    <span class="text-amber-400 mx-2">|</span>
-                    <span>AMBITIOUS</span>
-                    <span class="text-amber-400 mx-2">|</span>
-                    <span>BRAVE</span>
+                <h2 class="font-bebas text-3xl sm:text-4xl lg:text-5xl text-white tracking-widest text-center">
+                    <span class="whitespace-nowrap">POSITIVE</span>
+                    <span class="text-amber-400 mx-2 sm:mx-4">&bull;</span>
+                    <span class="whitespace-nowrap">AMBITIOUS</span>
+                    <span class="text-amber-400 mx-2 sm:mx-4">&bull;</span>
+                    <span class="whitespace-nowrap">BRAVE</span>
                 </h2>
-            </div>
-            <div class="scroll-down z-20">
-                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
             </div>
         </section>
 
@@ -198,8 +175,14 @@
             <div class="container mx-auto px-6">
                 <div class="grid md:grid-cols-1 gap-16 items-center">
                     <div class="animate-on-scroll fade-in-right text-center">
-                        <h2 class="font-bebas text-5xl md:text-7xl text-amber-400 tracking-wider mb-6">About 24N Sports</h2>
-                        <h3 class="text-3xl font-bold mb-4">Positive | Ambitious | Brave</h3>
+                        <h2 class="font-bebas text-5xl sm:text-6xl md:text-7xl text-amber-400 tracking-wider mb-6">About 24N Sports</h2>
+                        <h3 class="text-2xl sm:text-3xl font-bold mb-4">
+                            <span class="whitespace-nowrap">POSITIVE</span>
+                            <span class="text-amber-400 mx-1 sm:mx-2">&bull;</span>
+                            <span class="whitespace-nowrap">AMBITIOUS</span>
+                            <span class="text-amber-400 mx-1 sm:mx-2">&bull;</span>
+                            <span class="whitespace-nowrap">BRAVE</span>
+                        </h3>
                         <p class="text-lg text-gray-300 leading-relaxed mb-6 max-w-3xl mx-auto">
                             Welcome to 24N Sports Academy, a premier sports coaching provider for children. Our mission is to deliver high-quality sports education in a fun, safe, and positive environment. We believe in nurturing talent, building confidence, and fostering a lifelong love for sports.
                         </p>
@@ -221,13 +204,13 @@
             <div class="container mx-auto px-6">
                 <div class="grid md:grid-cols-2 gap-16 items-center">
                     <div class="flex justify-center animate-on-scroll fade-in-right">
-                        <div class="relative w-80 h-80">
+                        <div class="relative w-72 h-72 sm:w-80 sm:h-80">
                              <div class="absolute inset-0 rounded-full border-4 border-amber-400 transform scale-105 animate-pulse"></div>
                             <img src="https://i.ibb.co/spwRx2TJ/1698063220255-removebg-preview.png" alt="Founder and Managing Director of 24N Sports Academy" class="rounded-full object-cover w-full h-full shadow-2xl relative z-10">
                         </div>
                     </div>
                     <div class="text-center md:text-left animate-on-scroll fade-in-left">
-                        <h2 class="font-bebas text-5xl md:text-7xl text-amber-400 tracking-wider mb-4">Meet The Founder</h2>
+                        <h2 class="font-bebas text-5xl sm:text-6xl md:text-7xl text-amber-400 tracking-wider mb-4">Meet The Founder</h2>
                         <p class="text-3xl font-bold text-white mb-6">Managing Director & Founder</p>
                         <p class="text-xl italic text-gray-400 border-l-4 border-amber-400 pl-6">"Our goal is to build not just great athletes, but exceptional individuals. Every child has the potential for greatness, and our mission is to help them discover it."</p>
                     </div>
@@ -243,12 +226,12 @@
                 </svg>
             </div>
             <div class="container mx-auto px-6 text-center">
-                <h2 class="font-bebas text-5xl md:text-7xl text-amber-400 tracking-wider mb-16 animate-on-scroll fade-in-up">Our Programs</h2>
+                <h2 class="font-bebas text-5xl sm:text-6xl md:text-7xl text-amber-400 tracking-wider mb-16 animate-on-scroll fade-in-up">Our Programs</h2>
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <!-- Program Card 1: Football -->
                     <div class="program-card bg-black p-8 rounded-lg shadow-lg transition-all duration-300 animate-on-scroll fade-in-up" style="transition-delay: 100ms;">
                         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="program-icon h-16 w-16 mx-auto mb-6" viewBox="0 0 194 194">
-                               <circle fill="#fbbf24" cx="97" cy="97" r="97" />
+                                <circle fill="#fbbf24" cx="97" cy="97" r="97" />
                             <path fill="#000000" d="m 94,9.2 a 88,88 0 0 0 -55,21.8 l 27,0 28,-14.4 0,-7.4 z m 6,0 0,7.4 28,14.4 27,0 a 88,88 0 0 0 -55,-21.8 z m -67.2,27.8 a 88,88 0 0 0 -20,34.2 l 16,27.6 23,-3.6 21,-36.2 -8.4,-22 -31.6,0 z m 96.8,0 -8.4,22 21,36.2 23,3.6 15.8,-27.4 a 88,88 0 0 0 -19.8,-34.4 l -31.6,0 z m -50,26 -20.2,35.2 17.8,30.8 39.6,0 17.8,-30.8 -20.2,-35.2 -34.8,0 z m -68.8,16.6 a 88,88 0 0 0 -1.8,17.4 88,88 0 0 0 10.4,41.4 l 7.4,-4.4 -1.4,-29 -14.6,-25.4 z m 172.4,0.2 -14.6,25.2 -1.4,29 7.4,4.4 a 88,88 0 0 0 10.4,-41.4 88,88 0 0 0 -1.8,-17.2 z m -106,57.2 -15.4,19 L 77.2,182.6 a 88,88 0 0 0 19.8,2.4 88,88 0 0 0 19.8,-2.4 l 15.4,-26.6 -15.4,-19 -39.6,0 z m -47.8,2.6 -7,4 A 88,88 0 0 0 68.8,180.4 l -14,-24.6 -25.4,-16.2 z m 135.2,0 -25.4,16.2 -14,24.4 a 88,88 0 0 0 46.4,-36.6 l -7,-4 z"/>
                         </svg>
                         <h3 class="font-bebas text-3xl mb-4">Football Academy</h3>
@@ -273,14 +256,14 @@
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="program-icon h-16 w-16 mx-auto mb-6" stroke="none">
                                 <!-- The main yellow ball -->
                             <path fill="#fbbf24" d="M21.716,21.716c-15.596,15.596-15.596,40.973,0,56.568 c7.798,7.798,18.041,11.697,28.284,11.697s20.486-3.899,28.284-11.697c15.596-15.596,15.596-40.973,0-56.568 C62.688,6.12,37.312,6.12,21.716,21.716z"/>
-                            <!-- The black sections ("corners") -->
+                                <!-- The black sections ("corners") -->
                             <path fill="#000000" d="M24.525,21.804c3.954-3.576,8.486-6.166,13.277-7.782 c-3.039,23.348,8.52,34.274,11.122,36.406c-0.366,2.063-2.236,9.877-10.247,17.325 C35.612,65.37,20.047,51.636,24.525,21.804z"/>
                             <path fill="#000000" d="M23.13,76.87c-14.498-14.498-14.799-37.889-0.922-52.769 c-3.27,28.191,11.105,41.883,14.954,44.999c-3.475,2.924-7.968,5.728-13.75,8.038 C23.319,77.047,23.222,76.962,23.13,76.87z"/>
                             <path fill="#000000" d="M25.031,78.633c21.719-9.047,25.346-24.58,25.88-27.915 c1.97-0.712,9.657-2.984,20.117,0.276c-0.555,3.989-4.716,24.15-32.688,35.158 C33.553,84.616,29.014,82.11,25.031,78.633z"/>
                             <path fill="#000000" d="M76.87,76.87c-9.585,9.585-23.057,12.96-35.388,10.144 c25.911-11.211,30.658-30.368,31.466-35.372c4.259,1.562,8.924,4.06,13.812,7.921 C85.12,65.908,81.83,71.911,76.87,76.87z"/>
                             <path fill="#000000" d="M87.253,57.421c-18.721-14.359-33.938-9.77-37.088-8.569 c-1.603-1.353-7.4-6.872-9.807-17.565c3.758-1.522,23.28-7.966,46.771,10.729 C88.212,47.087,88.258,52.337,87.253,57.421z"/>
                             <path fill="#000000" d="M39.96,29.302c-0.777-4.468-0.947-9.757-0.056-15.918 C43.204,12.48,46.601,12.018,50,12.018c9.731,0,19.462,3.704,26.87,11.112 c4.552,4.552,7.699,9.982,9.454,15.75C63.671,22.046,44.715,27.495,39.96,29.302z"/>
-                        </svg>
+                            </svg>
                         <h3 class="font-bebas text-3xl mb-4">Netball</h3>
                         <p class="text-gray-400">Join one of the fastest-growing sports. We focus on fast-paced drills, strategic play, and fostering team spirit.</p>
                     </div>
@@ -296,23 +279,23 @@
                 </svg>
             </div>
             <div class="container mx-auto px-6 text-center">
-                <h2 class="font-bebas text-5xl md:text-7xl text-amber-400 tracking-wider mb-16 animate-on-scroll fade-in-up">Find Us Across The Globe</h2>
+                <h2 class="font-bebas text-4xl sm:text-5xl md:text-7xl text-amber-400 tracking-wider mb-16 animate-on-scroll fade-in-up">Find Us Across The Globe</h2>
                 <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-12 animate-on-scroll fade-in-up" style="transition-delay: 100ms;">We are proud to operate in world-class facilities across multiple countries, bringing premium sports coaching to a global community.</p>
                 <!-- Optimized grid for mobile to prevent horizontal overflow -->
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                    <div class="text-center animate-on-scroll fade-in-up" style="transition-delay: 200ms;">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-8 justify-items-center">
+                    <div class="flex flex-col items-center text-center animate-on-scroll fade-in-up" style="transition-delay: 200ms;">
                         <div class="w-24 h-24 rounded-full bg-gray-800 flex items-center justify-center mb-2 glow-bh transition-all duration-300 transform hover:scale-110"><img src="https://flagcdn.com/bh.svg" alt="Bahrain Flag" class="w-12"></div>
                         <span class="font-semibold">Bahrain</span>
                     </div>
-                      <div class="text-center animate-on-scroll fade-in-up" style="transition-delay: 300ms;">
+                     <div class="flex flex-col items-center text-center animate-on-scroll fade-in-up" style="transition-delay: 300ms;">
                         <div class="w-24 h-24 rounded-full bg-gray-800 flex items-center justify-center mb-2 glow-sa transition-all duration-300 transform hover:scale-110"><img src="https://flagcdn.com/sa.svg" alt="Saudi Arabia Flag" class="w-12"></div>
                         <span class="font-semibold">Saudi Arabia</span>
                     </div>
-                      <div class="text-center animate-on-scroll fade-in-up" style="transition-delay: 400ms;">
+                     <div class="flex flex-col items-center text-center animate-on-scroll fade-in-up" style="transition-delay: 400ms;">
                         <div class="w-24 h-24 rounded-full bg-gray-800 flex items-center justify-center mb-2 glow-ae transition-all duration-300 transform hover:scale-110"><img src="https://flagcdn.com/ae.svg" alt="UAE Flag" class="w-12"></div>
                         <span class="font-semibold">UAE</span>
                     </div>
-                      <div class="text-center animate-on-scroll fade-in-up" style="transition-delay: 500ms;">
+                     <div class="flex flex-col items-center text-center animate-on-scroll fade-in-up" style="transition-delay: 500ms;">
                         <div class="w-24 h-24 rounded-full bg-gray-800 flex items-center justify-center mb-2 glow-gb transition-all duration-300 transform hover:scale-110"><img src="https://flagcdn.com/gb.svg" alt="UK Flag" class="w-12"></div>
                         <span class="font-semibold">United Kingdom</span>
                     </div>
@@ -331,24 +314,24 @@
                        <h2 class="font-bebas text-4xl text-gray-400 tracking-wider mb-6 animate-on-scroll fade-in-up">Proudly Partnered With</h2>
                        <p class="text-xl text-amber-400 italic max-w-3xl mx-auto mb-16 animate-on-scroll fade-in-up" style="transition-delay: 100ms;">To empower athletic skills in youth and support young athletes.</p>
                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                       <!-- Partner Cards -->
-                       <a href="https://www.nadeenschool.com/" target="_blank" rel="noopener" class="partner-card bg-black rounded-lg p-6 flex items-center justify-center min-h-[10rem] relative group transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-amber-500/10 border border-gray-800 animate-on-scroll fade-in-up" style="transition-delay: 200ms;">
-                            <h3 class="font-bebas text-3xl text-gray-200 text-center tracking-wider">Nadeen School</h3>
-                            <div class="underline-glow"></div>
-                        </a>
-                        <a href="https://www.asb.bh/" target="_blank" rel="noopener" class="partner-card bg-black rounded-lg p-6 flex items-center justify-center min-h-[10rem] relative group transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-amber-500/10 border border-gray-800 animate-on-scroll fade-in-up" style="transition-delay: 300ms;">
-                            <h3 class="font-bebas text-3xl text-gray-200 text-center tracking-wider">American School of Bahrain</h3>
-                            <div class="underline-glow"></div>
-                        </a>
-                        <a href="https://www.st-chris.net/" target="_blank" rel="noopener" class="partner-card bg-black rounded-lg p-6 flex items-center justify-center min-h-[10rem] relative group transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-amber-500/10 border border-gray-800 animate-on-scroll fade-in-up" style="transition-delay: 400ms;">
-                            <h3 class="font-bebas text-3xl text-gray-200 text-center tracking-wider">St Christopher's School</h3>
-                            <div class="underline-glow"></div>
-                        </a>
-                        <a href="https://britishschoolbahrain.com/" target="_blank" rel="noopener" class="partner-card bg-black rounded-lg p-6 flex items-center justify-center min-h-[10rem] relative group transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-amber-500/10 border border-gray-800 animate-on-scroll fade-in-up" style="transition-delay: 500ms;">
+                        <!-- Partner Cards -->
+                        <a href="https://www.nadeenschool.com/" target="_blank" rel="noopener" class="partner-card bg-black rounded-lg p-6 flex items-center justify-center min-h-[10rem] relative group transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-amber-500/10 border border-gray-800 animate-on-scroll fade-in-up" style="transition-delay: 200ms;">
+                             <h3 class="font-bebas text-3xl text-gray-200 text-center tracking-wider">Nadeen School</h3>
+                             <div class="underline-glow"></div>
+                         </a>
+                         <a href="https://www.asb.bh/" target="_blank" rel="noopener" class="partner-card bg-black rounded-lg p-6 flex items-center justify-center min-h-[10rem] relative group transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-amber-500/10 border border-gray-800 animate-on-scroll fade-in-up" style="transition-delay: 300ms;">
+                             <h3 class="font-bebas text-3xl text-gray-200 text-center tracking-wider">American School of Bahrain</h3>
+                             <div class="underline-glow"></div>
+                         </a>
+                         <a href="https://www.st-chris.net/" target="_blank" rel="noopener" class="partner-card bg-black rounded-lg p-6 flex items-center justify-center min-h-[10rem] relative group transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-amber-500/10 border border-gray-800 animate-on-scroll fade-in-up" style="transition-delay: 400ms;">
+                             <h3 class="font-bebas text-3xl text-gray-200 text-center tracking-wider">St Christopher's School</h3>
+                             <div class="underline-glow"></div>
+                         </a>
+                         <a href="https://britishschoolbahrain.com/" target="_blank" rel="noopener" class="partner-card bg-black rounded-lg p-6 flex items-center justify-center min-h-[10rem] relative group transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-amber-500/10 border border-gray-800 animate-on-scroll fade-in-up" style="transition-delay: 500ms;">
                               <h3 class="font-bebas text-3xl text-gray-200 text-center tracking-wider">British School of Bahrain</h3>
                               <div class="underline-glow"></div>
-                        </a>
-                       </div>
+                         </a>
+                        </div>
             </div>
         </section>
 
@@ -360,7 +343,7 @@
                 </svg>
             </div>
             <div class="container mx-auto px-6 text-center">
-                <h2 class="font-bebas text-5xl md:text-7xl text-amber-400 tracking-wider mb-6 animate-on-scroll fade-in-up">Join The Academy</h2>
+                <h2 class="font-bebas text-5xl sm:text-6xl md:text-7xl text-amber-400 tracking-wider mb-6 animate-on-scroll fade-in-up">Join The Academy</h2>
                 <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-12 animate-on-scroll fade-in-up" style="transition-delay: 100ms;">
                     Ready to take the next step? Enroll in one of our programs today and start your journey to becoming a better athlete.
                 </p>
@@ -396,16 +379,16 @@
                         <h3 class="font-bebas text-2xl text-white tracking-wider mb-4">Follow Us</h3>
                         <div class="flex justify-center md:justify-start">
                               <a href="https://www.instagram.com/24nsportsacademy/?hl=en" target="_blank" class="instagram-icon text-gray-400">
-                                   <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                       <defs>
-                                           <linearGradient id="instagram-gradient" x1="0%" y1="100%" x2="100%" y2="0%">
-                                               <stop offset="0%" style="stop-color:#fdf497;"></stop>
-                                               <stop offset="50%" style="stop-color:#fd5949;"></stop>
-                                               <stop offset="100%" style="stop-color:#d6249f;"></stop>
-                                           </linearGradient>
-                                       </defs>
-                                       <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.85-.07-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919 1.266-.057 1.644-.07 4.85-.07zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98C23.986 15.667 24 15.259 24 12s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98C15.667.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"></path>
-                                   </svg>
+                                  <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                      <defs>
+                                          <linearGradient id="instagram-gradient" x1="0%" y1="100%" x2="100%" y2="0%">
+                                              <stop offset="0%" style="stop-color:#fdf497;"></stop>
+                                              <stop offset="50%" style="stop-color:#fd5949;"></stop>
+                                              <stop offset="100%" style="stop-color:#d6249f;"></stop>
+                                          </linearGradient>
+                                      </defs>
+                                      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.85-.07-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919 1.266-.057 1.644-.07 4.85-.07zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98C23.986 15.667 24 15.259 24 12s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98C15.667.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"></path>
+                                  </svg>
                               </a>
                         </div>
                     </div>
@@ -553,3 +536,8 @@
 
 </body>
 </html>
+
+
+
+
+
